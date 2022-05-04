@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Express Aula</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li> <a href="/">Home</a></li>
+                <li> <a href="/login">Login</a></li>
+                <li> <a href="/register">Registrar</a></li>
+                <li> <a href="/cadastro">Cadastro</a></li>
+                <li> <a href="/">Link 2</a></li>
+                <li> <a href="/">Link 3</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <div class="form-container">
+                <h1>Banco de dados Pessoais</h1>
+                <form action="/" class="form">
+                    <div>
+                        <label for="nome" name="nome">Nome</label>
+                        <input type="text" name="nome" id="nome">
+                    </div>
+                    <div>
+                        <label for="sobrenome" name="sobrenome">Sobrenome</label>
+                        <input type="text" name="sobrenome" id="sobrenome">
+                    </div>
+                    <div>
+                        <label for="celular" name="celular"> Contato</label>
+                        <input type="text" name="celular" id="celular" placeholder="DDD+Numero">
+                    </div>
+                    <div>
+                        <label for="cpf" name="cpf">CPF</label>
+                        <input type="text" name="cpf" id="cpf" placeholder="000 000 000 00">
+                    </div>
+                    <div>
+                        <label for="identidade" name="identidade">N° identidade</label>
+                        <input type="text" name="identidade" id="identidade">
+                    </div>
+                    <div>
+                        <label for="profissao" name="profissao">Profissão</label>
+                        <input type="text" name="profissao" id="profissao">
+                    </div>
+                    <div>
+                        <label for="email" name="email">E-mail</label>
+                        <input type="email" name="email" id="email" placeholder="email@yahoo.com">
+                    </div>
+                </form>
+                <br>
+                <h1>Endereço</h1>
+                <form action="" class="form">
+                    <div>
+                        <label for="bairro" name="bairro">Bairro</label>
+                        <input type="text" name="bairro" id="bairro">
+                    </div>
+                    <div>
+                        <label for="rua" name="rua">Rua ou Logradouro</label>
+                        <input type="text" name="rua" id="rua">
+                    </div>
+                    <div>
+                        <label for="complemento" name="complemento">Complemento</label>
+                        <input type="text" name="complemento" id="complemento">
+                    </div>
+                    <div>
+                        <label for="estado" name="estado">Estado/Distrito</label>
+                        <input type="text" name="estado" id="estado">
+                    </div>
+                    <div>
+                        <label for="cidade" name="cidade">Cidade</label>
+                        <input type="text" name="cidade" id="cidade">
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

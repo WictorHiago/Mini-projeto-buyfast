@@ -12,5 +12,5 @@ express-flash /
 mysql2 /
 sequelize para comunicar com banco de dados /
 nodemon para automatizar nossa aplicação /
-session-file-store para salvar sessões em arquivos /
+session-file-store para salconst sessões em arquivos /
 # 
