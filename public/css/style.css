@@ -2,9 +2,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
 
 body{
+    margin: 0;
     background-color: #3b3b3b;
     font-family: 'Fira Sans', sans-serif;
     box-sizing: border-box;
+}
+header{
+    width: 100vw;
 }
 .navbar{
     padding: 1.2em 2.4em;
@@ -12,21 +16,30 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #222;
+    background-color: #43294e;
     color: #fff;
-    border-bottom: 1px solid #f6982d;
+    border-bottom: 1px solid #64526d;
 }
 .navbar ul{
     display: flex;
     list-style: none;
 }
 .navbar ul li{
-    margin-left: 1em;
+    margin-left: 2em;
+    transition: 0.5s;
 }
+.navbar ul li:hover{
+    border-radius: 2px;
+    border-bottom: 1px solid #ffffff;
+    padding: 4px;
+    background-color: #9c2df6;
+}
+
 .navbar ul li a{
     text-decoration: none;
     color: #ffffff;
 }
+
 h1{
     color: #ffffff;
 }
@@ -45,8 +58,12 @@ main{
     color: #ffffff;
     border: 1px solid dimgrey;
     padding: 1.5rem;
-    box-shadow: none;
-    box-shadow: 6px 12px 11px #1e1e1e;
+    transition: 0.7s;
+}
+.form:hover{
+    border: 1px solid #64526d;
+    box-shadow: 6px 12px 11px #64526d;
+    transform: scale(1.02);
 }
 .form div{
     display: flex;
@@ -55,4 +72,18 @@ main{
 }
 .form div label{
     margin-right: 4px;
+}
+.form .submitBtn{
+    width: 100%;
+    height: 26px;
+    background-color: #43294e;
+    border: 1px solid #64526d;
+    color: #ffffff;
+    transition: 0.7s;
+}
+.form .submitBtn:hover{
+    font-weight: bold;
+    background-color:#9c2df6;
+    box-shadow: 3px 3px 3px #ffffff;
+    cursor: pointer;
 }

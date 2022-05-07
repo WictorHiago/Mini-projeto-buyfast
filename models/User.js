@@ -6,7 +6,7 @@ const db = require('../db/conn')
 
 const User = db.define('User', {
 
-    nome: {
+    name: {
         type: DataTypes.STRING,
         require: true,
     },

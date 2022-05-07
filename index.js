@@ -6,41 +6,31 @@ const mysql2 = require('mysql2')
 const { connect } = require('http2')
 const conn = require('./db/conn')//banco de dados
 const FileStore = require('session-file-store')(session)
-const flash = require('connect-flash/lib/flash')
+const flash = require('express-flash')
 
-//models
+const app = express()
+//CONTROLLER
+const buyfastController = require('./controllers/buyfastController')
+
+//MODELS
 const Cadastros = require('./models/Cadastros')
 const User = require('./models/User')
-//porta do servidor
-//const port = 3000 / usda antes da conexao com mysql
-//module express
-const app = express()
-//module path
-//const basePath = path.join(__dirname,'templates')
-//diretorio css/imgs
-app.use(express.static('public'))
 
-//egine handlebars
+//ROUTES
+const buyFastRoutes = require('./routes/buyFastRoutes')
+const authRoutes = require('./routes/authRoutes')
+
+//TEMPLATE ENGINE
 app.set("view engine", 'handlebars')
-app.engine('handlebars', exphbs.engine())//OBS
-
-//necessario para recerber respostas do body
+app.engine('handlebars', exphbs.engine())
+app.use(express.static('public'))
 app.use(express.urlencoded({
     extended: true
 }))
-//middleware para receber dados JSON
 app.use(express.json())
 
-// app.use((req,res,next) => {
-//     //se o usuario nao estiver logado passamos pro next
-//     if(req.session.userid) {
-//         //se o usuario ESTIVE logado, mano a sessao da requisiscao para a resposta
-//         res.locals.session = req.session
-//     }
-//     next()
-// })
+app.use(flash())
 
-//session diddleware , diz onde o express ira salvar nossas sessoes
 app.use(session({
     name:'session',
     secret: 'nosso_secret',
@@ -59,68 +49,26 @@ app.use(session({
     }
 }))
 
-app.use(flash())
+app.use((req,res,next) => {
 
-//====== setup padrao sem handlebars ==========
-// app.get('/', (req,res) => {
-//     res.sendFile(`${basePath}/index.html`)
-// })
-// app.get('/cadastro', (req,res) => {
-//     res.sendFile(`${basePath}/cadastro.html`)
-// })
-// app.get('/login', (req,res) => {
-//     res.sendFile(`${basePath}/login.html`)
-// })
-// app.get('/register', (req,res) => {
-//     res.sendFile(`${basePath}/register.html`)
-// })
+    if(req.session.userid) {
+        res.locals.session = req.session
+    }
 
-// //ERRO 404
-// app.use((req,res) => {
-//     res.status(404).sendFile(`${basePath}/404.html`)
-// })
-
-
-//Rotas usando handlebars
-app.get('/', (req,res) => {
-    res.render('pages/home')
+    next()
 })
 
-app.get('/login', (req,res) => {
-    res.render('pages/login')
-})
-app.get('/register', (req,res) => {
-    res.render('pages/register')
-})
-app.get('/cadastro', (req,res) => {
-    res.render('pages/cadastro')
-})
 
-//app.listen( port , console.log(`Rodando na porta ${port}`))
-
-// //conexao com banco de dados
-// const conn = mysql2.createConnection({
-//     host: 'localhost',
-//     user: 'root',
-//     password: '1234',
-//     database: 'projetodb2',
-// })
-
-
-//conexão sem sequelize
-// conn.connect((err) => {
-//     if(err) {
-//         console.log(err)
-//     }
-//     console.log('conexão com Mysql Bem sucedida!')
-
-//     app.listen(3000)
-// })
+app.use('/pages', buyFastRoutes)
+app.use('/', authRoutes)
+app.use('/', buyfastController.buyfast)
 
 conn
+    //.sync()
     .sync({force:true})// usando force:true para fazer ligação entre as tabelas
     .then(() => {
         app.listen(3000)
+        console.log('Servidor On: Port/ localhost:3000')
     })
     .catch((err) => {
         console.log(err)

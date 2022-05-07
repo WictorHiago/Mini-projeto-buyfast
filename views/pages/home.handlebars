@@ -1,2 +1,15 @@
-
-        <h1>Página em desenvolvimento</h1>
+<section>
+    <div class="anuncios-container">
+        {{#each anuncios}}
+        <figure>
+            <blockquote>
+                "{{this.title}}"
+                "{{this.descricao}}"
+                "{{this.preco}}"
+                "{{this.endereco}}"
+            </blockquote>
+            <figcaptio> Por <span>{{this.User.name}}</span></figcaption>
+        </figure>
+        {{/each}}
+    </div>
+</section>

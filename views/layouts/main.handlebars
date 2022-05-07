@@ -4,30 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
-    <title>Express Aula</title>
-    <script src="/index.js">
-
-    </script>
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Projeto BuyFast</title>
 </head>
 <body>
     <header>
         <nav class="navbar">
-            <ul>
+            <div>
+                <h1> ::BuyFast></h1>
+            </div>
+            <ul> 
                 <li> <a href="/">Home</a></li>
+                {{#if session.userid}}
+                <li> <a href="/logout"> Sair</a></li>
+                <li> <a href="/pages/meusanuncios"> Meus Anuncios</a></li>
+                <li> <a href="/pages/createAnuncios">Anunciar</a></li>
+                {{else}}
                 <li> <a href="/login">Login</a></li>
                 <li> <a href="/register">Registrar</a></li>
+                {{/if}}
                 <li> <a href="/cadastro">Cadastro</a></li>
-                <li> <a href="/">Link 2</a></li>
-                <li> <a href="/">Link 3</a></li>
             </ul>
         </nav>
     </header>
     <main>
+        {{!-- FLASH MESSEGES --}}
+        {{#if messages.message}}
+        {{messages.message}}
+        {{/if}}
         {{{body}}}
     </main>
     <footer>
-        
+
     </footer>
 </body>
 </html>

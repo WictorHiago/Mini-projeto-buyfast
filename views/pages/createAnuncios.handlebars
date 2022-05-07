@@ -1,0 +1,24 @@
+<section>
+            <div class="form-container">
+                <h1>Anuncios</h1>
+                <form action="/pages/createAnuncios" method="POST" class="form">
+                    <div>
+                        <label for="title" > Título</label>
+                        <input type="text" name="title" id="titulo" placeholder="O que deseja anunciar?">
+                    </div>
+                    <div>
+                        <label for="descricao" > Descrição</label>
+                        <textarea name="descricao" id="descricao" cols="30" rows="10" placeholder="Faça uma breve descrição"></textarea>
+                    </div>
+                    <div>
+                        <label for="preco"> Preço</label>
+                        <input type="number" name="preco" id="preco" placeholder="R$ Valor">
+                    </div>
+                    <div>
+                        <label for="endereco"> Endereco</label>
+                        <input type="text" name="endereco" id="endereco" placeholder="Endereço">
+                    </div>
+                    <input type="submit" value="Criar anuncio" class="submitBtn">
+                </form>
+            </div>
+</section>

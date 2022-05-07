@@ -1,0 +1,18 @@
+<section>
+    <div class="meus-anuncios">
+        <h2>Meus Anuncios</h2>
+        <a href="/pages/createAnuncios" class="btn"> Criar anuncios</a>
+    </div>
+    <ul>
+        {{#each anuncios}}
+        <li><span> {{this.title}} </span></li>
+        <span>
+            <a href="">EDITAR</a>
+            <form action="">
+                <input type="hidden" name="id" value="{{this.id}}">
+                <input type="submit" value="EXCLUIR">
+            </form>
+        </span>
+        {{/each}}
+    </ul>
+</section>
