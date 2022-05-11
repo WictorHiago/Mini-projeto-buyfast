@@ -64,8 +64,8 @@ app.use('/', authRoutes)
 app.use('/', buyfastController.buyfast)
 
 conn
-    //.sync()
-    .sync({force:true})// usando force:true para fazer ligação entre as tabelas
+    .sync()
+    //.sync({force:true})// usando force:true para fazer ligação entre as tabelas
     .then(() => {
         app.listen(3000)
         console.log('Servidor On: Port/ localhost:3000')

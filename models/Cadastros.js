@@ -1,5 +1,4 @@
 const { DataTypes } = require('sequelize')
-
 const db = require('../db/conn')
 const User = require('./User')
 
@@ -15,24 +14,40 @@ const Cadastros = db.define('Cadastros', {
     },
     contato: {
         type: DataTypes.STRING,
-        allowNull: true,
+        notnull: true,
     },
     cpf: {
         type: DataTypes.STRING,
-        allowNull: true,
+        NOTNULL: true,
     },
     identidade: {
         type: DataTypes.STRING,
-        allowNull: true,
+        NOTNULL: true,
     },
     profissao: {
         type: DataTypes.STRING,
-        allowNull: true,
+        NOTNULL: true,
     },
     email: {
         type: DataTypes.STRING,
-        allowNull: true,
+        NOTNULL: true,
     },
+    bairro: {
+        type: DataTypes.STRING,
+        NOTNULL:true
+    },
+    rua: {
+        type: DataTypes.STRING,
+        NOTNULL: true
+    },
+    complemento: {
+        type: DataTypes.STRING,
+        NOTNULL:true
+    },
+    estado: {
+        type: DataTypes.STRING,
+        NOTNULL:true
+    }
 
 })
 

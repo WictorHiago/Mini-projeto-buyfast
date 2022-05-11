@@ -1,18 +1,22 @@
 <section>
     <div class="meus-anuncios">
         <h2>Meus Anuncios</h2>
-        <a href="/pages/createAnuncios" class="btn"> Criar anuncios</a>
+        <a href="/pages/createAnuncios"> Criar um anuncio</a>
     </div>
-    <ul>
-        {{#each anuncios}}
-        <li><span> {{this.title}} </span></li>
-        <span>
-            <a href="">EDITAR</a>
-            <form action="">
+    <br>
+    {{#each anuncios}}
+    <form action="" method="post" class="form">
+        <ul class="ul-meus-anuncios">
+            <li> <span class="cor-texto"> {{this.title}} </span> </li>
+            <li> <span> <p class="dsc">Descrição:</p>{{this.descricao}} </span> </li>
+            <li> <span class="cor-texto"> R$ {{this.preco}} </span> </li>
+            <span>
+                <button class="anuncioBtn"><a href=""> Editar</a></button>
                 <input type="hidden" name="id" value="{{this.id}}">
-                <input type="submit" value="EXCLUIR">
-            </form>
-        </span>
-        {{/each}}
-    </ul>
+                <input type="submit" value="EXCLUIR" class="anuncioBtn">
+            </span>
+        </ul>
+    </form>
+    <br>{{!-- espaço entre cards --}}
+    {{/each}}
 </section>

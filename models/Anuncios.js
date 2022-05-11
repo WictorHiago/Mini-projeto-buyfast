@@ -1,6 +1,5 @@
 const { DataTypes } = require('sequelize')
 const db = require('../db/conn')
-
 const User = require('./User')
 
 const Anuncios = db.define('Anuncios', {

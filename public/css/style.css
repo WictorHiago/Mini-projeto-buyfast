@@ -40,7 +40,7 @@ header{
     color: #ffffff;
 }
 
-h1{
+h1,h2{
     color: #ffffff;
 }
 main{
@@ -86,4 +86,39 @@ main{
     background-color:#9c2df6;
     box-shadow: 3px 3px 3px #ffffff;
     cursor: pointer;
+}
+/* MEUS ANUNCIOS */
+.form .anuncioBtn{
+    width: 150px;
+    height: 26px;
+    background-color: #43294e;
+    border: 1px solid #64526d;
+    color: #ffffff;
+    transition: 0.7s;
+}
+.meus-anuncios a{
+    color: #15ff00;
+}
+.form .anuncioBtn:hover{
+    font-weight: bold;
+    background-color:#9c2df6;
+    box-shadow: 3px 3px 3px #ffffff;
+    cursor: pointer;
+}
+.ul-meus-anuncios li{
+    list-style: none;
+    text-decoration: none;
+}
+.form .dsc{
+    font-weight: bold;
+}
+.form .cor-texto{
+    color: #15ff00;
+    font-size: large;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+.anuncioBtn a{
+    text-decoration: none;
+    color: #ffffff;
 }

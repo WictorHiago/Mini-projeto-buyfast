@@ -1,6 +1,7 @@
 const { DataTypes} = require('sequelize')
 
 const db = require('../db/conn')
+const Anuncios = require('./Anuncios')
 
 //User
 
@@ -20,5 +21,6 @@ const User = db.define('User', {
     }
 
 })
+
 
 module.exports = User
