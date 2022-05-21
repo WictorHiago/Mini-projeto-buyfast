@@ -7,6 +7,7 @@ const Anuncios = db.define('Anuncios', {
     title: {
         type: DataTypes.STRING,
         allowNull: false,
+        varchar: 500
     },
 
     descricao: {
